@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+         body {
+            font-family: 'Dancing Script', cursive;
+        }
+        .main {
+            display: flex; /* Flexbox for centering */
+            flex-direction: column; /* Stack content vertically */
+            justify-content: center; /* Center content horizontally */
+            align-items: center; /* Center content vertically */
+            height: 100vh; /* Full viewport height */
+        }
+        .main img {
+            max-width: 90%; /* Scale down to fit the container */
+            height: auto; /* Maintain the aspect ratio */
+            border-radius: 20px; /* Rounded corners */
+        }
+        .main h1 {
+            font-size: 50px; /* Adjust font size */
+            color: #333; /* Heading color */
+        }
+        .container {
+        display: flex; /* Use Flexbox for horizontal layout */
+        justify-content: space-around; /* Add space between items */
+        align-items: center; /* Align items vertically */
+        
+        }
+
+        .one,
+        .half,
+        .five{
+            width: 350px;
+            height: 400px;
+            background-color: rgb(241, 212, 175);
+            justify-content: center;
+            position: relative;
+            border-radius: 10px;
+        }
+        .one button, 
+        .half button, 
+        .five button {
+            width: 50px;
+            height: 50px;
+            font-size: 40px;
+            background-color: rgb(255, 182, 13);
+            position: absolute; /* Absolute positioning inside the parent */
+            bottom: 10px; /* Distance from the bottom */
+            right: 10px; /* Distance from the right */
+            border-radius: 5px;
+            border: 3px solid black;
+        }
+        .cart{
+            width: 220px;
+            height: 50px;
+            background-color: rgb(255, 182, 13);
+            font-size: 40px;
+            padding: 5px 5px 5px 5px;
+            margin-top: 330px;
+            margin-left: 30px;
+            border-radius: 5px;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            border: 3px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1>Cococnut Oil</h1>
+        <img src="image/coco.png" alt="">
+    </div>
+    <div class="sub">
+        <img src="image/coconut.png" alt="">
+    </div>
+    <div class="container">
+        <div class="one">
+            <div class="cart">Add to Cart</div>
+            <button>+</button>
+        </div>
+        <div class="half">
+            <div class="cart">Add to Cart</div>
+            <button>+</button>
+        </div>
+        <div class="five">
+            <div class="cart">Add to Cart</div>
+            <button>+</button>
+        </div>
+    </div>
+</body>
+</html>

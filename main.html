@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Login</title>
+</head>
+<body>
+    <center>
+        <form id="loginForm">
+            <h1>Login Page</h1> 
+            <img src="image/MNS-removebg-preview.png">
+            <table>
+                <div class="username">
+                    <tr>
+                        <td>User name: </td>
+                        <td><input type="text" id="name" name="name" required></td>
+                    </tr>
+                </div>
+                <div class="password">
+                    <tr>
+                        <td>Password: </td>
+                        <td><input type="password" id="password" name="password" minlength="8" required></td>
+                    </tr>
+                </div>
+            </table>
+            <button type="submit">Login</button>
+        </form>
+    </center>
+
+    <script>
+        // JavaScript to handle form submission
+        document.getElementById("loginForm").addEventListener("submit", function (e) {
+            e.preventDefault(); // Prevent form from refreshing the page
+
+            // Collecting input values
+            const name = document.getElementById("name").value;
+            const password = document.getElementById("password").value;
+
+            // Sending login credentials to the server for validation
+            fetch("https://mnsvilvam-usilampatti.netlify.app/api/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ username: name, password: password }),
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.success) {
+                    // If login is successful, redirect to success.html
+                    window.location.href = "success.html";
+                } else {
+                    // If login failed, show the error message
+                    alert(data.message || "Login failed. Please try again.");
+                }
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+                alert("An error occurred. Please try again.");
+            });
+        });
+    </script>
+</body>
+</html>

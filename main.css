@@ -1,0 +1,80 @@
+/* Style for the body */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff8400, #ff4400);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+img{
+    width: 200px;
+    height: 120px;
+    align-items: center;
+}
+/* Center the form */
+form {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px 40px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    height: 500px;
+    
+}
+form h1{
+    font-size: 40px;
+}
+form td{
+    font-size: 30px;
+}
+
+/* Table styling */
+table {
+    border-spacing: 10px;
+}
+
+/* Input fields */
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #fff;
+    color: #333;
+    font-size: 14px;
+    /* margin-top: 30px; */
+}
+.username{
+    margin-top: 20px;
+}
+/* .password{
+    margin-top: 30px;
+} */
+/* Input fields focus effect */
+input[type="text"]:focus, input[type="password"]:focus {
+    border: 2px solid #c5cb11;
+    outline: none;
+}
+
+/* Button styling */
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #2c3abb;
+    color: #fff;
+    font-size: 30px;
+    font-family: sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 30px;
+}
+button:hover {
+    background: #2575fc;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}

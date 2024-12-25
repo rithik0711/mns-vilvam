@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Signup</title>
+</head>
+<body>
+    <center>
+        
+        <form id="signupForm">
+            <h1>Signup Page</h1>
+            <img src="image/MNS-removebg-preview.png" >
+            <table>
+                <tr>
+                    <td>Name: </td>
+                    <td><input type="text" id="name" name="name" ></td>
+                </tr>
+                <tr>
+                    <td>Username: </td>
+                    <td><input type="text" id="username" name="username" required></td>
+                </tr>
+                <tr>
+                    <td>Password: </td>
+                    <td><input type="password" id="password" name="password" minlength="8" required></td>
+                </tr>
+            </table>
+            <button type="submit">Signup</button>
+        </form>
+    </center>
+
+    <script>
+document.getElementById("signupForm").addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent the form from submitting normally
+
+    const name = document.getElementById("name").value;
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    if (name && username && password.length >= 8) {
+        fetch("https://mnsvilvam-usilampatti-backend.onrender.com/api/signup", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ name, username, password }),
+})
+.then(response => response.json())
+.then(data => {
+    if (data.success) {
+        alert("Signup Successful!");
+        window.location.href = "index.html";
+    } else {
+        alert(`Signup Failed: ${data.message}`);
+    }
+})
+.catch(error => {
+    console.error("Fetch Error:", error);
+    alert("Network or server error occurred: " + error.message);
+});
+
+    } else {
+        alert("Please fill in all fields and ensure password is at least 8 characters long.");
+    }
+});
+
+
+    </script>
+    
+</body>
+</html>
